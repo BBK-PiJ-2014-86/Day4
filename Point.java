@@ -46,4 +46,11 @@ public class Point {
 		return distanceToOrigin;
 	}
 	
+	public void moveTo(double z, double t) {
+		
+		this.x = z;
+		this.y = t;
+		
+	}
+	
 }
