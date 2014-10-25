@@ -60,4 +60,11 @@ public class Point {
 		
 	}
 	
+	public Point clone () {
+		
+		Point copy = new Point(this.x,this.y);
+		
+		return copy;
+	}
+	
 }
