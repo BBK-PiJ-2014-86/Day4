@@ -19,13 +19,31 @@ public class Point {
 	double x;
 	double y;
 	
-	double distanceTo(Point p){
+	public Point(double x, double y){
+		
+		this.x = x;
+		this.y= y;
+		
+	}
+	
+	
+	public double distanceTo(Point p){
 		
 		double distance = 0.0;
 		
 		distance = Math.sqrt(Math.pow(Math.abs(x-p.x),2) + Math.pow(Math.abs(y-p.y),2));
 		
 		return distance;
+	}
+	
+	public double distanceToOrigin () {
+		
+		double distanceToOrigin = 0.0;;
+		Point origin = new Point(0,0);
+		
+		distanceToOrigin = distanceTo(origin);
+		
+		return distanceToOrigin;
 	}
 	
 }
