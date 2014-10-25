@@ -16,10 +16,7 @@ public class Integer2 {
 
 	int value;
 	
-	public Integer2 (int value) {
-		this.value = value;
-	}
-	
+
 	public int getValue() {
 		
 		int value = this.value;
@@ -49,6 +46,16 @@ public class Integer2 {
 		} else {
 			return false;
 		}
+	}
+	
+	public void prettyPrint() {
+		System.out.println(this.value);
+	}
+	
+	public String toString () {
+		String intString = this.value+"";
+		
+		return intString;
 	}
 	
 	
