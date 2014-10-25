@@ -34,7 +34,7 @@ public class BinaryAndDecimal {
 		
          if(choice ==0){  
 		System.out.print("Enter a binary number: ");
-		stringInput = sc.nextLine();
+		stringInput = sc.next();
 		
 		binary2decimal(stringInput);
 	
@@ -56,7 +56,7 @@ public class BinaryAndDecimal {
 			
 			int m = Character.getNumericValue(string.charAt(i));
 			
-			number = (int) (number+ (m* Math.pow(2,pow)));
+			number = number+ (int)(m* Math.pow(2,pow));
 			pow--;
 			
 		}
