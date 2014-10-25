@@ -29,7 +29,7 @@ public static void main (String [] args0) {
 	if (userInputStr.substring(0, 2).equals("0x")) {
 		hexToDecimal(userInputStr);
 	} else {
-		double userInputDouble = Double.parseDouble(userInputStr);
+		int userInputDouble = Integer.parseInt(userInputStr);
 		decimalToHex(userInputDouble);
 	}
 	
@@ -82,15 +82,51 @@ static double hexToDecimal (String hex) {
 		power--;
 		
 	}
-	System.out.println(decimal);
+	System.out.println("The decimal number is "+ decimal);
 	return decimal;
 }
 
 
-static String decimalToHex (double decimal) {
+static String decimalToHex (int decimal) {
 	
+	String hex = "";
+	String hexOpp = "";
 	
-	return null;
+	do {
+		
+		int rem = (int) (decimal % 16);
+		
+		if (rem>9) {
+			if (rem==10){
+				hex = hex+"a";
+			} else if (rem == 11) {
+				hex = hex+"b";
+			} else if (rem ==12) {
+				hex = hex +"c";
+			} else if (rem == 13) {
+				hex = hex+"d";
+			} else if (rem == 14) {
+				hex = hex+"e";
+			} else {
+				hex = hex+"f";
+			}
+		} else if (rem >= 0 && rem<=9) {
+		    hex = hex + rem;
+		}
+		
+		decimal = decimal /16;
+		
+	} while (decimal!=0);
+	
+
+	for (int i=hex.length()-1; i>=0; i--) {
+		hexOpp = hexOpp + hex.charAt(i);
+	}
+	
+	System.out.println("The hexidecimal number is: "+ "0x" + hexOpp);
+	return hexOpp;	
+	
+
 }
 	
 }
