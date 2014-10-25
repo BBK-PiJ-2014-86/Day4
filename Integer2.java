@@ -27,6 +27,30 @@ public class Integer2 {
 		return value;
 	}
 	
+	public void setValue(int newValue) {
+		
+		this.value = newValue;
+		
+	}
+	
+	public boolean isEven () {
+		
+		if(this.value % 2 == 0) {
+			return true;
+		} else {
+			return false;
+		}	
+	}
+	
+	public boolean isOdd () {
+		if (this.value %2 == 1) {
+			return true;
+			
+		} else {
+			return false;
+		}
+	}
+	
 	
 	
 }
