@@ -23,12 +23,13 @@ public static void main (String [] args0) {
 
 	Scanner sc = new Scanner(System.in);
 	String userInputStr = sc.next();
-	double userInputDouble = Double.parseDouble(userInputStr);
+
 	
 	
-	if (userInputStr.substring(0, 1).equals("0x")) {
+	if (userInputStr.substring(0, 2).equals("0x")) {
 		hexToDecimal(userInputStr);
 	} else {
+		double userInputDouble = Double.parseDouble(userInputStr);
 		decimalToHex(userInputDouble);
 	}
 	
@@ -37,9 +38,52 @@ public static void main (String [] args0) {
 	
 static double hexToDecimal (String hex) {
 	
+	double decimal = 0.0;
+	String realHex = hex.substring(2, hex.length());
+	int length = realHex.length();
+	int power = length -1;
 	
-	
-	return 0.0;
+	for (int i = 0; i<realHex.length();i++) {
+		
+		if(Character.isDigit(realHex.charAt(i))) {
+			
+			int temp = Character.getNumericValue(realHex.charAt(i));
+			decimal = decimal + temp*Math.pow(16, power);
+			
+		} else {
+			
+			if (realHex.charAt(i)=='a') {
+				
+				decimal = decimal + 10*Math.pow(16, power);
+				
+			} else if (realHex.charAt(i)=='b') {
+				
+				decimal = decimal + 11*Math.pow(16, power);
+				
+			} else if (realHex.charAt(i)=='c') {
+				
+				decimal = decimal + 12*Math.pow(16, power);
+				
+			} else if (realHex.charAt(i)=='d') {
+				
+				decimal = decimal + 13*Math.pow(16, power);
+				
+			} else if (realHex.charAt(i)=='e') {
+				
+				decimal = decimal + 14*Math.pow(16, power);
+				
+			} else {
+				
+				decimal = decimal + 15*Math.pow(16, power);
+				
+			}
+		}
+		
+		power--;
+		
+	}
+	System.out.println(decimal);
+	return decimal;
 }
 
 
