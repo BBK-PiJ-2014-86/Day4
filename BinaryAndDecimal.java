@@ -24,15 +24,26 @@ public class BinaryAndDecimal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		Scanner sc = new Scanner(System.in);
+		String stringInput;
+		int numberInput;
 		
-		String input = sc.nextLine();
+		System.out.print("Press 0 for binary to decimal. Press 1 for the opposite.");
 		
-		binary2decimal(input);
-
+		int choice =  sc.nextInt();
+		
+         if(choice ==0){  
+		System.out.print("Enter a binary number: ");
+		stringInput = sc.nextLine();
+		
+		binary2decimal(stringInput);
 	
-	}
+         } else {
+        System.out.print("Enter a decimal number: ");
+		numberInput = sc.nextInt();
+		decimal2binary(numberInput);
+         }
+}
 
 	static int binary2decimal (String string) {
 		int number=0;
@@ -50,7 +61,32 @@ public class BinaryAndDecimal {
 			
 		}
 		
-		System.out.println(number);
+		System.out.println("The decimal number is : "+ number);
 		return number;
+	}
+	
+	static String decimal2binary (int decimal) {
+		
+		String binary = "";
+		String binaryOpp = "";
+		
+		do {
+			
+			if(decimal % 2== 1) {
+				binary = binary + "1";
+			} else {
+				binary = binary + "0";
+			}
+			
+			decimal = decimal /2;
+			
+		} while (decimal>0);
+		
+		for (int i=binary.length()-1; i>=0; i--) {
+			binaryOpp = binaryOpp + binary.charAt(i);
+		}
+		
+		System.out.println("The binary number is: "+ binaryOpp);
+		return binaryOpp;
 	}
 }
