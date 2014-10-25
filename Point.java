@@ -67,4 +67,13 @@ public class Point {
 		return copy;
 	}
 	
+	public Point opposite () {
+		double oppositeX = this.x *(-1);
+		double oppositeY = this.y *(-1);
+		
+		Point oppositeCopy = new Point (oppositeX, oppositeY);
+		
+		return oppositeCopy;
+	}
+	
 }
