@@ -53,4 +53,11 @@ public class Point {
 		
 	}
 	
+	public void moveTo(Point newPoint){
+		
+		this.x = newPoint.x;
+		this.y = newPoint.y;
+		
+	}
+	
 }
